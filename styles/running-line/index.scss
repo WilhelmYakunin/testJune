@@ -1,0 +1,45 @@
+@use "sass:map";
+@import "../sizesVariables.scss";
+@import "../colorsVariables.scss";
+@import "../speedVariables.scss";
+
+$gap: 12px;
+
+.running-line {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee $runningline-speed infinite linear;
+
+    &__container {
+        overflow-x: hidden;
+        display: flex;
+        padding: $m-runningline-wraps;
+        background-color: $running-line-background;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            padding: $not-m-runningline-wraps;
+        }
+    }
+
+    &__item {
+        margin: 0 18px;
+        position: relative;
+        text-transform: uppercase;
+        color: $secondary-text;
+        font-size: $m-runningline-font;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            font-size: $not-m-runningline-font;
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

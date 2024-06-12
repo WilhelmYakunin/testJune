@@ -1,0 +1,161 @@
+@use "sass:map";
+@import "../sizesVariables.scss";
+@import "../colorsVariables.scss";
+@import "../speedVariables.scss";
+
+.participants {
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        padding: $m-common-wraps;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            padding: $not-m-common-wraps;
+        }
+    }
+
+    &__header {
+        font-size: $m-header-partisipants-font;
+        color: $information-text;
+        text-transform: uppercase;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            font-size: $not-m-header-partisipants-font;
+        }
+    }
+
+    &-swiper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    &-swiper__wrapper {
+        margin: 120px 0;
+        display: flex;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            order: 1;
+            margin: 60px auto;
+        }
+    }
+
+    &-swiper__slide {
+        min-width: 335px;
+        min-height: 388px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            min-width: 384px;
+            min-height: 462px;
+        }
+    }
+
+    &-swiper__avatar {
+        padding: 12px;
+        background-image: url("../../public/pictures/stampPaper@1x-mobile.webp");
+        clip-path: circle(49% at 50% 48%);
+
+        @media (min-resolution: 2dppx) {
+            background-image: url("../../public/pictures/stampPaper@2x-mobile.webp");
+        }
+    }
+
+    &-swiper__slide-person-name {
+        font-weight: 600;
+        font-size: $participant-name;
+        text-wrap: nowrap;
+    }
+
+    &-swiper__slide-person-title {
+        font-weight: 400;
+        color: $information-text;
+    }
+
+    &-swiper__slide-link {
+        padding: 12px;
+        display: inline;
+        border: 1px solid $features-color;
+        border-radius: 62px;
+        font-size: $participant-link-font;
+        color: $features-color;
+        text-decoration: none;
+    }
+
+    &__swipper-navigation-panel {
+        display: flex;
+        align-items: center;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            font-size: $not-m-header-partisipants-font;
+            order: 0;
+            margin-left: auto;
+        }
+    }
+
+    &__swipper-next,
+    &__swipper-prev {
+        margin: 0 10px;
+        text-decoration: none;
+        width: $m-participants-nav-button;
+        height: $m-participants-nav-button;
+        background-color: $information-text;
+        border-radius: 50%;
+        display: flex;
+
+        &-icon {
+            width: $m-participants-nav-button-icon;
+            height: $m-participants-nav-button-icon;
+            border: 1px solid $secondary-text;
+            margin: auto auto;
+        }
+
+    }
+
+    &__swipper-next-icon {
+        rotate: 45deg;
+        border-left: transparent;
+        border-bottom: transparent;
+    }
+
+    &__swipper-prev-icon {
+        rotate: -135deg;
+        border-left: transparent;
+        border-bottom: transparent;
+    }
+
+    &__dots-wrapper {
+        display: flex;
+        gap: 10px;
+        list-style: none;
+    }
+
+    &__dot {
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        background-color: $inactive-dotcolor;
+        border-radius: 50%;
+
+        &--active {
+            background-color: $information-text;
+        }
+    }
+
+    &__current-item {
+        color: $inactive-dotcolor;
+
+        &--active {
+            color: $information-text;
+        }
+    }
+}

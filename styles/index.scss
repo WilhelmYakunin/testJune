@@ -1,0 +1,22 @@
+@import "../node_modules/normalize.css/normalize.css";
+
+@import "./features/index.scss";
+@import "./participants/index.scss";
+@import "./running-line/index.scss";
+@import "./footer/index.scss";
+
+h1,
+h2,
+h3,
+h4,
+p,
+ol,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}

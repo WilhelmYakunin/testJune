@@ -1,0 +1,14 @@
+@use "sass:map";
+@import '../colorsVariables.scss';
+@import "../sizesVariables.scss";
+
+.footer {
+    padding: $m-common-wraps;
+    background-color: $secondary-background;
+    color: $information-text;
+    font-size: $footer-font;
+
+    @media (min-width: map.get($breakpoints, 'mobile')) {
+        padding: $not-m-common-wraps;
+    }
+}

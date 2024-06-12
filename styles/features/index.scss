@@ -1,0 +1,88 @@
+@use "sass:map";
+
+@import "../sizesVariables.scss";
+@import "../colorsVariables.scss";
+
+.features {
+    padding: $m-common-wraps;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        text-transform: uppercase;
+        font-size: $m-features-header;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            max-width: 806px;
+            flex-direction: row;
+            font-size: $not-m-features-header;
+            display: inline;
+        }
+    }
+
+    &__header-desc {
+        text-transform: initial;
+        color: $features-color;
+        font-size: $m-features-header-desc;
+
+        @media (min-width: map.get($breakpoints, 'mobile')) {
+            display: inline-block;
+            width: 250px;
+            font-size: $not-m-features-header-desc;
+        }
+    }
+
+    &__list {
+        list-style: none;
+
+        &-item {
+            margin: 15px 0;
+            font-size: $not-m-features-list-item;
+            background-image: url("../../public/pictures/stampPaper@1x-mobile.webp");
+
+            display: flex;
+            flex-direction: column;
+
+            @media (min-resolution: 2dppx) {
+                font-size: $not-m-features-list-item;
+                background-image: url("../../public/pictures/stampPaper@2x-mobile.webp");
+            }
+
+            &-container {
+                width: 100%;
+                min-width: 335px;
+                min-height: 300px;
+            }
+
+            &-number {
+                position: relative;
+                top: 62px;
+                left: 20px;
+                font-size: $features-list-item-number-font-size;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: $features-list-item-number-size;
+                width: $features-list-item-number-size;
+                gap: 10px;
+                background-color: $features-item-desc-background;
+                border: 1px solid transparent;
+                border-radius: 50%;
+            }
+
+            &-desc {
+                top: 62px;
+                left: 20px;
+                margin: $m-features-list-item-container;
+
+                @media (min-width: map.get($breakpoints, 'mobile')) {
+                    margin: $not-m-features-list-item-container;
+                }
+            }
+
+
+        }
+    }
+}
