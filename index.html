@@ -118,12 +118,12 @@
             </li>
           </ul>
       </section>
-      <section class="features">
+      <section class="features features__carousel">
         <h2 class="features__header">Этапы преображения Васюков
           <span class="features__header-desc">Будущие источники обогащения васюкинцев</span>
         </h2>
-        <ol class="features__list"> 
-          <li class="features__list-item">
+        <ol class="features__list features__carousel-slides"> 
+          <li class="features__list-item features-swiper__slide">
             <div class="features__list-item-container">
               <span class="features__list-item-number">1</span>
               <p class="features__list-item-desc">
@@ -137,7 +137,7 @@
               </p>
             </div>
           </li>
-          <li class="features__list-item">
+          <li class="features__list-item features-swiper__slide">
             <div class="features__list-item-container">
               <span class="features__list-item-number">3</span>
               <p class="features__list-item-desc">
@@ -145,7 +145,7 @@
               </p>
             </div>
           </li>
-          <li class="features__list-item">
+          <li class="features__list-item features-swiper__slide">
             <div class="features__list-item-container">
               <span class="features__list-item-number">4</span>
               <p class="features__list-item-desc">
@@ -159,7 +159,7 @@
               </p>
             </div>
           </li>
-          <li class="features__list-item">
+          <li class="features__list-item features-swiper__slide">
             <div class="features__list-item-container">
               <span class="features__list-item-number">6</span>
               <p class="features__list-item-desc">
@@ -167,7 +167,7 @@
               </p>
             </div>
           </li>
-          <li class="features__list-item">
+          <li class="features__list-item features-swiper__slide">
             <div class="features__list-item-container">
               <span class="features__list-item-number">7</span>
               <p class="features__list-item-desc">
@@ -176,6 +176,14 @@
             </div>
           </li>
         </ol>
+        <div class="features__swipper-navigation-panel">
+          <a href="#" class="features__swipper-prev">
+            <span class="participants__swipper-prev-icon"></span>
+          </a>
+          <a href="#" class="features__swipper-next">
+              <span class="features__swipper-next-icon"></span>
+          </a>
+        </div>
       </section>
       <section class="participants__container">
         <div class="participants-swiper carousel">
@@ -295,4 +303,5 @@
     </footer>
   </body>
   <script src="./js/slider.js"></script>
+  <script src="./js/dottedSlider.js"></script>
 </html>

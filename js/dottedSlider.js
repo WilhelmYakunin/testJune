@@ -1,36 +1,36 @@
-class Slider {
+class DotttedSlider {
     constructor(slider, { 
         autoplay = true, 
         inFrame = 1, 
         offset = 1, 
         interval = 4000,
         doted, 
-        carosuleItemSelector, 
-        carouselWarapperSelector,
-        caroulesNextBtnSelector, 
-        caroulesPrevBtnSelector,
-        navigationItemClassName,
-        navigationItemClassNameActive,
-        dotsWarapperClassName } = {}) {
+        featuresCarosuleItemSelector, 
+        featuresCarouselWarapperSelector,
+        featuresCaroulesNextBtnSelector, 
+        featuresCaroulesPrevBtnSelector,
+        featuresNavigationItemClassName,
+        featuresNavigationItemClassNameActive,
+        featuresDotsWarapperClassName } = {}) {
 
         this.slider = slider;
         this.inFrame = inFrame;
         this.offset = offset;
         this.interval = interval;
         this.doted = doted;
-        this.allItems = slider.querySelectorAll('.' + carosuleItemSelector);
+        this.allItems = slider.querySelectorAll('.' + featuresCarosuleItemSelector);
         this.itemCount = this.allItems.length;
         this.allFrames = this.getAllFrames();
         this.frameCount = this.allFrames.length;
         this.frameIndex = inFrame;
-        this.wrapper = slider.querySelector(carouselWarapperSelector);
-        this.nextButton = slider.querySelector('.' + caroulesNextBtnSelector);
-        this.prevButton = slider.querySelector('.' + caroulesPrevBtnSelector);
+        this.wrapper = slider.querySelector(featuresCarouselWarapperSelector);
+        this.nextButton = slider.querySelector('.' + featuresCaroulesNextBtnSelector);
+        this.prevButton = slider.querySelector('.' + featuresCaroulesPrevBtnSelector);
         this.autoplay = autoplay; 
         this.paused = null;
-        this.navigationItemClassName = navigationItemClassName;
-        this.navigationItemClassNameActive = navigationItemClassNameActive;
-        this.dotsWarapperClassName = dotsWarapperClassName;
+        this.navigationItemClassName = featuresNavigationItemClassName;
+        this.navigationItemClassNameActive = featuresNavigationItemClassNameActive;
+        this.dotsWarapperClassName = featuresDotsWarapperClassName;
         this.init();
     }
 
@@ -157,28 +157,28 @@ class Slider {
     }
 }
 
-const blockName = 'participants';
-const carosuleItemSelector = blockName + '-swiper__slide';
-const carouselWarapperSelector = '.carousel-slides';
-const caroulesNextBtnSelector = blockName + '__swipper-next';
-const caroulesPrevBtnSelector = blockName + '__swipper-prev';
-const navigationItemClassName = blockName + '__current-item';
-const navigationItemClassNameActive = blockName + '__current-item--active';
-const dotsWarapperClassName = blockName + '__dots-wrapper';
+const featuresBlockName = 'features';
+const featuresCarosuleItemSelector = featuresBlockName + '-swiper__slide';
+const featuresCarouselWarapperSelector = featuresBlockName + '__carousel-slides';
+const featuresCaroulesNextBtnSelector = featuresBlockName + '__swipper-next';
+const featuresCaroulesPrevBtnSelector = featuresBlockName + '__swipper-prev';
+const featuresNavigationItemClassName = featuresBlockName + '__current-item';
+const featuresNavigationItemClassNameActive = featuresBlockName + '__current-item--active';
+const featuresDotsWarapperClassName = featuresBlockName + '__dots-wrapper';
 
-document.addEventListener('DOMContentLoaded', function() {
-    new Slider(document.querySelector('.carousel'), {
-        inFrame: 3, 
-        offset: 3,
+document.addEventListener('DOMContentLoaded', () => {
+    new DotttedSlider(document.querySelector('.' + featuresBlockName +'__carousel'), {
+        inFrame: 1, 
+        offset: 1,
         autoplay: false,
         doted: false,
         interval: 4000,
-        carosuleItemSelector, 
-        carouselWarapperSelector, 
-        caroulesNextBtnSelector, 
-        caroulesPrevBtnSelector,
-        navigationItemClassName,
-        navigationItemClassNameActive,
-        dotsWarapperClassName
+        featuresCarosuleItemSelector, 
+        featuresCarouselWarapperSelector, 
+        featuresCaroulesNextBtnSelector, 
+        featuresCaroulesPrevBtnSelector,
+        featuresNavigationItemClassName,
+        featuresNavigationItemClassNameActive,
+        featuresDotsWarapperClassName
     });
 });

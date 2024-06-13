@@ -38,7 +38,11 @@
         list-style: none;
 
         &-item {
+            box-sizing: border-box;
+            min-width: 335px;
+            min-height: 300px;
             margin: 15px 0;
+            padding: $m-features-list-item-container;
             font-size: $not-m-features-list-item;
             background-image: url("../../public/pictures/stampPaper@1x-mobile.webp");
 
@@ -50,16 +54,10 @@
                 background-image: url("../../public/pictures/stampPaper@2x-mobile.webp");
             }
 
-            &-container {
-                width: 100%;
-                min-width: 335px;
-                min-height: 300px;
-            }
-
             &-number {
                 position: relative;
-                top: 62px;
-                left: 20px;
+                top: 40px;
+                left: -50px;
                 font-size: $features-list-item-number-font-size;
                 display: inline-flex;
                 align-items: center;
@@ -73,12 +71,9 @@
             }
 
             &-desc {
-                top: 62px;
-                left: 20px;
-                margin: $m-features-list-item-container;
 
                 @media (min-width: map.get($breakpoints, 'mobile')) {
-                    margin: $not-m-features-list-item-container;
+                    // margin: $not-m-features-list-item-container;
                 }
             }
 
